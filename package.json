@@ -1,0 +1,24 @@
+{
+  "name": "mapdata-list",
+  "version": "1.0.0",
+  "description": "Create a list of locations from a Simple Maps mapdata file",
+  "main": "extract-mapdata.js",
+  "dependencies": {
+    "codegrid-js": "^0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "extract": "node extract-mapdata.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatHuf/mapdata-list.git"
+  },
+  "author": "Mat Huf",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/MatHuf/mapdata-list/issues"
+  },
+  "homepage": "https://github.com/MatHuf/mapdata-list#readme"
+}
