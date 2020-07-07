@@ -3,11 +3,17 @@ const codegrid = require("codegrid-js");
 const grid = codegrid.CodeGrid();
 const countries = require("./countries.js");
 
+const filePath = process.argv[2];
+const file = fs.readFileSync(filePath);
+if (!file) {
+  console.log(`No file found at ${filePath}. Please be sure to add a mapdata.js file to that directory`);
+}
+
 console.log("Starting location extraction...");
 
 // https://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
 // This will put simplemaps_worldmap_mapdata in the global scope
-eval(fs.readFileSync("./Example/mapdata.js").toString());
+eval(file.toString());
 
 const locationsWithCountries = [];
 const uniqueCountries = [];
@@ -29,8 +35,8 @@ for (let key in simplemaps_worldmap_mapdata.locations) {
     if (!locationsRemaining) {
       uniqueCountries.sort((a, b) => a.localeCompare(b));
       const html = createHtml();
-      fs.writeFile('./Output/locationsByCountry.html', html, (err) => {
-        if (err) throw err;
+      fs.writeFile('./output/locationsByCountry.html', html, (error) => {
+        if (error) throw error;
         console.log('Success! HTML file created in Output directory');
       });
     }
