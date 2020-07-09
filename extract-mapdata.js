@@ -11,7 +11,6 @@ if (!file) {
 
 console.log('Starting location extraction...');
 
-// https://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
 // This will put simplemaps_worldmap_mapdata in the global scope
 eval(file.toString());
 
@@ -44,7 +43,6 @@ for (let key in simplemaps_worldmap_mapdata.locations) {
   grid.getCode(Number.parseFloat(location.lat), Number.parseFloat(location.lng), setCode);
 }
 
-// https://stackoverflow.com/questions/21617468/node-js-generate-html
 const createHtml = () => {
   const header = '';
   return `<!DOCTYPE html><html><head>${header}</head><body>${createCountryLinks()}${createBody()}</body></html>`;
