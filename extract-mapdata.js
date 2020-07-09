@@ -45,10 +45,10 @@ for (let key in simplemaps_worldmap_mapdata.locations) {
 
 const createHtml = () => {
   const header = '';
-  return `<!DOCTYPE html><html><head>${header}</head><body>${createCountryLinks()}${createBody()}</body></html>`;
+  return `<!DOCTYPE html><html><head>${header}</head><body>${createCountryLinks()}${createLocationList()}</body></html>`;
 };
 
-const createBody = () => {
+const createLocationList = () => {
   let countryItems = '';
   for (let country of uniqueCountries) {
     const locationsInCountry = locationsWithCountries.filter(l => l.country === country);
