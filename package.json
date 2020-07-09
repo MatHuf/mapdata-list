@@ -4,11 +4,12 @@
   "description": "Create a list of locations from a Simple Maps mapdata file",
   "main": "extract-mapdata.js",
   "dependencies": {
-    "codegrid-js": "^0.0.2"
+    "codegrid-js": "^0.0.2",
+    "node-html-parser": "^1.2.20"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node extract-mapdata.js ./test/mapdata.js && node ./test/test.js",
     "extract": "node extract-mapdata.js ./mapData/mapdata.js"
   },
   "repository": {

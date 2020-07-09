@@ -1,7 +1,7 @@
-const fs = require("fs");
-const codegrid = require("codegrid-js");
+const fs = require('fs');
+const codegrid = require('codegrid-js');
 const grid = codegrid.CodeGrid();
-const countries = require("./countries.js");
+const countries = require('./countries.js');
 
 const filePath = process.argv[2];
 const file = fs.readFileSync(filePath);
@@ -9,7 +9,7 @@ if (!file) {
   console.log(`No file found at ${filePath}. Please be sure to add a mapdata.js file to that directory`);
 }
 
-console.log("Starting location extraction...");
+console.log('Starting location extraction...');
 
 // https://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
 // This will put simplemaps_worldmap_mapdata in the global scope
