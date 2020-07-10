@@ -1,9 +1,6 @@
 # mapdata-list
  Generate an html list of locations by country from a Simple Maps mapdata file
 
-## Requirements
-Node v7.0 and up
-
  ## Instructions
 1. Download the mapdata.js file from Simple Maps
 2. Place in the mapData directory
