@@ -44,7 +44,7 @@ for (let key in simplemaps_worldmap_mapdata.locations) {
 }
 
 const createHtml = () => {
-  const header = '';
+  const header = '<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Locations by Country</title>';
   return `<!DOCTYPE html><html><head>${header}</head><body>${createCountryLinks()}${createLocationList()}</body></html>`;
 };
 
