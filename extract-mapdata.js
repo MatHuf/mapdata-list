@@ -16,16 +16,24 @@ eval(file.toString());
 
 const locationsWithCountries = [];
 const uniqueCountries = [];
+const mapDataCountryList = simplemaps_worldmap_mapdata.state_specific;
 let locationsRemaining = Object.keys(simplemaps_worldmap_mapdata.locations).length;
 
 for (let key in simplemaps_worldmap_mapdata.locations) {
-  let location = simplemaps_worldmap_mapdata.locations[key];
+  const location = simplemaps_worldmap_mapdata.locations[key];
   const setCode = (error, code) => {
     if (error) {
       console.log(error);
       return;
     }
-    let country = countries.countryListAlpha2[code.toUpperCase()];
+    let country;
+    const countryObj = mapDataCountryList[code.toUpperCase()];
+    if (countryObj) {
+      country = mapDataCountryList[code.toUpperCase()].name;
+    } else {
+      console.log(`Country code ${code} not found in mapdata state_specific, falling back to alternative country list`);
+      country = countries.countryListAlpha2[code.toUpperCase()];
+    }
     if (!uniqueCountries.includes(country)) {
       uniqueCountries.push(country);
     }
