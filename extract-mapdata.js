@@ -60,6 +60,7 @@ const createLocationList = () => {
   let countryItems = '';
   for (let country of uniqueCountries) {
     const locationsInCountry = locationsWithCountries.filter(l => l.country === country);
+    locationsInCountry.sort((a, b) => a.name.localeCompare(b.name));
     countryItems = countryItems + createCountryItem(locationsInCountry, country);
   }
   return countryItems;
